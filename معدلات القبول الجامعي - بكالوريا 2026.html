@@ -53,9 +53,38 @@
     border-bottom:1px solid var(--line);
     margin-bottom:22px;
   }
-  .seal{
+  .brand-logo{
     flex:0 0 auto;
-    width:72px;height:72px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    position:relative;
+    padding:2px 4px 0;
+  }
+  .brand-logo .bac{
+    font-family:'Markazi Text', serif;
+    font-weight:700;
+    font-style:italic;
+    font-size:52px;
+    line-height:0.85;
+    color:var(--green-deep);
+    letter-spacing:0.5px;
+    white-space:nowrap;
+  }
+  .brand-logo .year{
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:600;
+    font-size:16px;
+    letter-spacing:5px;
+    color:var(--gold);
+    margin-top:5px;
+  }
+  .brand-logo .rule{
+    width:100%;
+    height:3px;
+    margin-top:6px;
+    border-radius:2px;
+    background:linear-gradient(90deg, var(--green) 0%, var(--gold) 100%);
   }
   .title-block{flex:1 1 auto; min-width:0;}
   h1{
@@ -276,7 +305,8 @@
 
   @media (max-width:640px){
     h1{font-size:26px;}
-    .seal{width:54px;height:54px;}
+    .brand-logo .bac{font-size:34px;}
+    .brand-logo .year{font-size:11px; letter-spacing:3px;}
     header.top{gap:14px;}
     td.estab{display:none;}
     thead th:nth-child(1){display:none;}
@@ -287,21 +317,11 @@
 <div class="wrap">
 
   <header class="top">
-    <svg class="seal" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="50" cy="50" r="47" stroke="#0E5A42" stroke-width="2"/>
-      <circle cx="50" cy="50" r="39" stroke="#B8892B" stroke-width="1.2" stroke-dasharray="2 3"/>
-      <path id="arcTop" d="M 15 50 A 35 35 0 0 1 85 50" fill="none"/>
-      <text font-size="7.4" fill="#0E5A42" font-family="IBM Plex Sans Arabic, sans-serif" font-weight="600">
-        <textPath href="#arcTop" startOffset="50%" text-anchor="middle">التعليم العالي والبحث العلمي</textPath>
-      </text>
-      <g transform="translate(50,52)">
-        <path d="M0,-16 L4,-5 L15,-5 L6,2 L9,13 L0,6 L-9,13 L-6,2 L-15,-5 L-4,-5 Z" fill="#B8892B"/>
-      </g>
-      <path id="arcBottom" d="M 18 62 A 32 32 0 0 0 82 62" fill="none"/>
-      <text font-size="6.6" fill="#0E5A42" font-family="IBM Plex Sans Arabic, sans-serif" font-weight="600">
-        <textPath href="#arcBottom" startOffset="50%" text-anchor="middle">بكالوريا 2026</textPath>
-      </text>
-    </svg>
+    <div class="brand-logo">
+      <span class="bac">Bac</span>
+      <span class="year">2026</span>
+      <span class="rule"></span>
+    </div>
     <div class="title-block">
       <h1>معدلات القبول الجامعي لحاملي بكالوريا 2026</h1>
       <div class="subtitle">
